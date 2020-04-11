@@ -120,21 +120,26 @@ class Form extends Component {
               <FormErrors formErrors={this.state.formErrors} />                    
             </div>
             <div className='input-half'>
-              <label>Population</label>
-              <input data-population type='number' name='population' onChange={this.handleChange} placeholder='Enter Population'/>
-              <label>Period Type</label>              
-              <select data-period-type name='periodType' value={this.state.periodType} onChange={this.handleChange} placeholder='Select Period Type'>
-                <option value=''>Select Period Type</option>
-                <option value='days'>Days</option>
-                <option value='weeks'>Weeks</option>
-                <option value='months'>Months</option>
-              </select>
-              <label>Time to elaspe</label>
-              <input data-time-to-elapse type='number' name='timeToElapse' onChange={this.handleChange} placeholder='Time to Elapse'/>
-              <label>Reported Cases</label>              
-              <input data-reported-cases type='number' name='reportedCases' onChange={this.handleChange} placeholder='Enter Reported Cases'/>
-              <label>Total Hospital Beds</label>              
-              <input data-total-hospital-beds type='number' name='totalHospitalBeds' onChange={this.handleChange} placeholder='Enter Total Hospital Beds'/>
+              <label>Population
+                <input data-population type='number' name='population' onChange={this.handleChange} placeholder='Enter Population'/>
+              </label>
+              <label>Period Type              
+                <select data-period-type name='periodType' value={this.state.periodType} onChange={this.handleChange} placeholder='Select Period Type'>
+                  <option value=''>Select Period Type</option>
+                  <option value='days'>Days</option>
+                  <option value='weeks'>Weeks</option>
+                  <option value='months'>Months</option>
+                </select>
+              </label>
+              <label>Time to elaspe
+                <input data-time-to-elapse type='number' name='timeToElapse' onChange={this.handleChange} placeholder='Time to Elapse'/>
+              </label>
+              <label>Reported Cases              
+                <input data-reported-cases type='number' name='reportedCases' onChange={this.handleChange} placeholder='Enter Reported Cases'/>
+              </label>
+              <label>Total Hospital Beds              
+                <input data-total-hospital-beds type='number' name='totalHospitalBeds' onChange={this.handleChange} placeholder='Enter Total Hospital Beds'/>
+              </label>
             </div>
             <div className='button-div'>
               <button data-go-estimate type='submit' onClick={this.handleSubmit}>Estimate</button>
