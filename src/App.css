@@ -20,7 +20,20 @@ body{
   margin: 10px;
   line-height: 50px;
   font-size: 30px;
-  //background-color: pink;
+}
+.inner-flexbox{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: DodgerBlue;
+  text-align: center;
+}
+.inner-flexbox > .inner-flexbox-child{
+  width: 250px;
+  margin: 10px;
+  line-height: 50px;
+  font-size: 30px;
+
 }
 input{
   width: 95.5%;
@@ -58,7 +71,7 @@ select{
   text-align: left;
   color: #08153e;
 }
-button{
+button.form-button{
   float: right;
   width: 236px;
   height: 60px;
@@ -78,4 +91,29 @@ button{
 .error-text, .submit-error{
   font-size: 20px;
   color: rgb(245, 70, 70);
+}
+.button-div{
+  text-align: center;
+}
+.button-div > span {
+  display: block;
+}
+.result-button{
+  margin: 0 auto;
+  width: 190px;
+  height: 30px;
+  border-radius: 45px;
+  box-shadow: 0 3px 6px 0 #92a7e8;
+  background-color: #45ec23;
+  font-family: Poppins;
+  font-size: 15px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.62;
+  letter-spacing: normal;
+  color: #08153e;
+}
+div.result-button{
+  text-align: center;
 }

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import {covid19ImpactEstimator} from './estimator.js'
+import {covid19ImpactEstimator} from './estimator.js';
+//import {Redirect} from 'react-router-dom';
 import Result from './Result';
 
 class Form extends Component {
@@ -26,9 +27,10 @@ class Form extends Component {
       totalHospitalBedsInvalid: true,
       formValid: false,
       submitError: '',
-      result: ''
+      canSubmit: false
     }
   }
+
   validateInput = (fieldName, value) => {
     let formErrors = this.state.formErrors;
     let popEntryInvalid = this.state.popEntryInvalid;
@@ -43,7 +45,7 @@ class Form extends Component {
         formErrors.population = popEntryInvalid ? 'Population cannot be blank or less than 10' : '';
         break;
       case 'periodType':
-        periodTypeInvalid = value == null;
+        periodTypeInvalid = value == '';
         formErrors.periodType = periodTypeInvalid ? 'Select a period Type' : '';
         break;
       case 'timeToElapse':
@@ -92,18 +94,19 @@ class Form extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    //console.log(this.state.formErrors);
+    console.log(this.state.periodType);
     if(!this.state.formValid) {
       this.setState({
         submitError: 'You need to enter all empty space to submit the form'
       })
-      console.log(this.state.submitError);
+      //console.log(this.state.submitError);
     }else{
       this.setState({
         result: covid19ImpactEstimator(this.state),
         submitError: ''
-      })
-      console.log(this.state.result);
+      });
+
+      //console.log(this.state.result);
     }
     
 
@@ -142,12 +145,11 @@ class Form extends Component {
               </label>
             </div>
             <div className='button-div'>
-              <button data-go-estimate type='submit' onClick={this.handleSubmit}>Estimate</button>
+              <button class='form-button' data-go-estimate type='submit' onClick={this.handleSubmit}>Estimate</button>
             </div>
           </form>
-
           <section className='flex-box'>
-            <Result />
+            <Result result={this.state.result}/>
           </section>
         </div>
       </div>
