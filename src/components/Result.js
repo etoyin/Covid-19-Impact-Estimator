@@ -12,7 +12,7 @@ class Result extends Component {
       toggleImpact: true
     }
   }
-  switchBtwImPactAndSevere = (data) => {
+  switchBtwImPactAndSevere = (data, label) => {
     return {
       chartData: {
         labels: [
@@ -24,7 +24,7 @@ class Result extends Component {
         ],
         datasets: [
           {
-            label: 'Severe Estimated Impact',
+            label: label,
             data: [
               this.props.result.data.reportedCases,
               data.currentlyInfected,
@@ -44,8 +44,8 @@ class Result extends Component {
     setTimeout(() => {
       if(this.props.result !== undefined ){
         this.setState({
-          severeImpact: this.switchBtwImPactAndSevere(this.props.result.severeImpact),
-          impact: this.switchBtwImPactAndSevere(this.props.result.impact)
+          severeImpact: this.switchBtwImPactAndSevere(this.props.result.severeImpact, 'Severe Estimated Impact'),
+          impact: this.switchBtwImPactAndSevere(this.props.result.impact, 'Estimated Impact')
         });
       }
     }, 1000);
