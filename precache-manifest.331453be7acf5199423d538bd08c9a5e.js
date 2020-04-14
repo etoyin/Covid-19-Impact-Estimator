@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c0e0c2251d580e5b9e96294089a8787c",
+    "revision": "c74236ec06feb276a9716462ef1b57ba",
     "url": "/Covid-19-Impact-Estimator/index.html"
   },
   {
-    "revision": "a4ae5ff7ae23cc0ca8cb",
+    "revision": "c1ce89313c74f6e65c74",
     "url": "/Covid-19-Impact-Estimator/static/css/main.65135aa9.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Covid-19-Impact-Estimator/static/js/2.968c6886.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "a4ae5ff7ae23cc0ca8cb",
-    "url": "/Covid-19-Impact-Estimator/static/js/main.8787e8f2.chunk.js"
+    "revision": "c1ce89313c74f6e65c74",
+    "url": "/Covid-19-Impact-Estimator/static/js/main.dd5eb222.chunk.js"
   },
   {
     "revision": "41a06bbd7cf6a685b523",
