@@ -9,7 +9,7 @@ class Result extends Component {
     this.state = {
       impact: '',
       severeImpact: '',
-      toggleImpact: false
+      toggleImpact: true
     }
   }
   switchBtwImPactAndSevere = (data) => {
@@ -18,8 +18,9 @@ class Result extends Component {
         labels: [
           `Reported Cases(${this.props.result.data.reportedCases})`, 
           `Estimate Currently Infected(${data.currentlyInfected})`, 
-          `Infections in ${this.props.result.data.timeToElapse} ${this.props.result.data.periodType}`,
-          `Cases in ICU (${data.casesForICUByRequestedTime})`
+          `Infections in ${this.props.result.data.timeToElapse} ${this.props.result.data.periodType} (${data.infectionsByRequestedTime})`,
+          `Cases in ICU (${data.casesForICUByRequestedTime})`,
+          `Cases that will need Ventilators(${data.casesForVentilatorsByRequestedTime})`
         ],
         datasets: [
           {
@@ -29,8 +30,9 @@ class Result extends Component {
               data.currentlyInfected,
               data.infectionsByRequestedTime,
               data.casesForICUByRequestedTime,
+              data.casesForVentilatorsByRequestedTime
             ],
-            backgroundColor: ['#45ec23', '#45ec23', '#45ec23', '#45ec23']
+            backgroundColor: ['#45ec23', '#45ec23', '#45ec23', '#45ec23', '#45ec23']
           }
         ]
 
@@ -47,7 +49,6 @@ class Result extends Component {
         });
       }
     }, 1000);
-    
   }
   handleClick = () => {
     this.setState({
